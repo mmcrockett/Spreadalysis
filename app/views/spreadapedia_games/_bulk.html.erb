@@ -1,0 +1,34 @@
+<% width = 1200 %>
+<% cwidth = width/(SpreadapediaGames.column_names.length) %>
+
+<% @games.each_with_index do |game,i| %>
+  <%= form_for(game, :url => spreadapedia_games_path) do |f| %>
+    <% if (0 == i) %>
+    <div class="field" style="width:<%= width %>px;height:1.2em;">
+      <% SpreadapediaGames.column_names.each do |col| %>
+        <% if ("id" != col) %> 
+        <div class="field" style="float:left;width:<%= cwidth %>px;height:1.1em;"><%= f.label(col) %></div>
+        <% end %>
+      <% end %>
+      <div class="field" style="float:left;width:<%= cwidth %>px;height:1.1em;"></div>
+    </div>
+    <% end %>
+  <div class="field" style="width:<%= width %>px;height:1.2em;">
+    <% SpreadapediaGames.column_names.each do |col| %>
+      <% options = {} %>
+      <% options[:id] = "#{col}_#{i}" %>
+      <% options[:style] = "float:left;width:#{cwidth}px;height:1.1em;padding:0;border:0;" %>
+      <% if (("line" != col) && ("overunder" != col) && ("vmoneyline" != col) && ("hmoneyline" != col) || (nil != game[col])) %>
+        <% options[:readonly] = "readonly" %>
+        <% options[:style] = "#{options[:style]}background-color:#eeeeee;" %>
+      <% end %>
+      <% if ("id" != col) %> 
+      <%= f.text_field(col, options) %>
+      <% end %>
+    <% end %>
+    <%= f.submit("add", :style=>"float:left;width:#{cwidth}px;height:1.1em;padding:0;border:0;") %>
+    <%= javascript_tag("$('#line_#{i}').change(function() {$('#lresult_#{i}').val(lresult($('#vscore_#{i}').val(), $('#hscore_#{i}').val(), $(this).val()));})") %>
+    <%= javascript_tag("$('#overunder_#{i}').change(function() {$('#ouresult_#{i}').val(ouresult($('#vscore_#{i}').val(), $('#hscore_#{i}').val(), $(this).val()));})") %>
+  </div>
+  <% end %>
+<% end %>

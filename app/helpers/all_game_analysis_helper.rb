@@ -1,0 +1,2 @@
+module AllGameAnalysisHelper
+end

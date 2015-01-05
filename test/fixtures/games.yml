@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-01-02
+  visitor: MyString
+  vscore: 1
+  home: MyString
+  hscore: 1
+  vspread: 9.99
+  vline: 1
+  hline: 1
+
+two:
+  date: 2013-01-02
+  visitor: MyString
+  vscore: 1
+  home: MyString
+  hscore: 1
+  vspread: 9.99
+  vline: 1
+  hline: 1

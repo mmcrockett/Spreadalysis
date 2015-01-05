@@ -1,0 +1,13 @@
+<h1>OverUnderAnalysis#view</h1>
+  <div class="row">
+<% @data[:headers].each do |header|%>
+    <div class="oucolumn ouheader"><%= header %></div>
+<% end %>
+  </div>
+<% @data[:data].each do |row|%>
+  <div class="ourow <%= if (row[-2].to_f < 0.05 and row[-1] > 0) then "highlight" end %>">
+    <% row.each do |col| %>
+    <div class="oucolumn"><%= col %></div>
+    <% end %>
+  </div>
+<% end %>

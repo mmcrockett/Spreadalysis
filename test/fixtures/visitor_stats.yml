@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  games: 1
+  line: 9.99
+  wins: 1
+  losses: 1
+  atswins: 1
+  atslosses: 1
+
+two:
+  games: 1
+  line: 9.99
+  wins: 1
+  losses: 1
+  atswins: 1
+  atslosses: 1

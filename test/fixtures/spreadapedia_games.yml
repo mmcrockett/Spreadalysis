@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-01-08
+  week: MyString
+  visitor: MyString
+  home: MyString
+  line: 9.99
+  overunder: 9.99
+  vscore: 1
+  hscore: 1
+  lresult: 1
+  result: 1
+  ouresult: 1
+
+two:
+  date: 2013-01-08
+  week: MyString
+  visitor: MyString
+  home: MyString
+  line: 9.99
+  overunder: 9.99
+  vscore: 1
+  hscore: 1
+  lresult: 1
+  result: 1
+  ouresult: 1

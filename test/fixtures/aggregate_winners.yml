@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vspread: 9.99
+  games: 1
+  wins: 1
+  winsspread: 1
+
+two:
+  vspread: 9.99
+  games: 1
+  wins: 1
+  winsspread: 1

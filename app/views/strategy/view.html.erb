@@ -1,0 +1,16 @@
+<h1>Strategy#view</h1>
+  <div class="row">
+<% @data[:headers].each do |header|%>
+    <div class="scolumn sheader"><%= header %></div>
+<% end %>
+  </div>
+<% @data[:data].each_with_index do |row,i|%>
+  <div class="srow <%= if (row[-1].to_i > 0) then "highlight" end %>">
+    <% row.each do |col| %>
+    <div class="scolumn"><%= col %></div>
+    <% end %>
+  </div>
+  <% if ((StrategyController::YEARS.length - 1) == (i % (StrategyController::YEARS.length))) %>
+  <hr>
+  <% end %>
+<% end %>

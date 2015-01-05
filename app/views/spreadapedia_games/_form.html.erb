@@ -1,0 +1,25 @@
+<%= form_for(@spreadapedia_game) do |f| %>
+  <% if @spreadapedia_game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spreadapedia_game.errors.count, "error") %> prohibited this spreadapedia_game from being saved:</h2>
+
+      <ul>
+      <% @spreadapedia_game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% SpreadapediaGames.column_names.each do |col| %>
+  <div class="field" style="width:800px;height:1.2em;">
+    <% if ("id" == col) then disabled = true; else disabled = false; end %>
+    <div class="field" style="float:left;width:200px;height:1.1em;"><%= f.label(col) %></div>
+    <div class="field" style="float:left;width:400px;height:1.1em;"><%= f.text_field(col, :disabled => disabled) %></div>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

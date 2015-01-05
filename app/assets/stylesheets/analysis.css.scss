@@ -1,0 +1,31 @@
+// Place all the styles related to the Analysis controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$height: 1.05em;
+$rwidth: 700px;
+$cwidth: $rwidth/10;
+$bwidth: 1;
+
+div.column {
+  float: left;
+  height: $height;
+  width:  $cwidth;
+  text-align: right;
+  font-size: 0.9em;
+}
+
+div.header {
+  border: #{$bwidth}px solid black;
+  width:  $cwidth - $bwidth*2;
+  font-weight: bold;
+  text-align: center;
+}
+
+div.highlight {
+  background-color: yellow;
+}
+
+div.row {
+  height: $height;
+  width:  $rwidth;
+}

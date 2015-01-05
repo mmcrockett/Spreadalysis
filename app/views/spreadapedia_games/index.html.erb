@@ -1,0 +1,32 @@
+<h1>Listing spreadapedia_games</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spreadapedia_games.each_with_index do |spreadapedia_game, i| %>
+  <tr>
+    <% if (0 == i ) %>
+    <th>e</th>
+    <th>d</th>
+      <% SpreadapediaGames.column_names.each do |colname| %>
+    <th><%= colname %></th>
+      <% end %>
+    </tr><tr>
+    <% end %>
+    <td><%= link_to 'e', edit_spreadapedia_game_path(spreadapedia_game) %></td>
+    <td><%= link_to 'x', spreadapedia_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% spreadapedia_game.attributes.values_at(*SpreadapediaGames.column_names).each do |v| %>
+    <td><%= v %></td>
+    <% end %>
+    </tr>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Spreadapedia game', new_spreadapedia_game_path %>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spreadalysis</title>
+  <%= javascript_include_tag "application", :media => "all" %>
+  <%= javascript_include_tag "spreadapedia_games", :media => "all" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
